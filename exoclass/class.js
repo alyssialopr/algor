@@ -23,15 +23,15 @@ class pokemon {
   }
 }
 
-let mew = new pokemon("Mew", 70, 70, 50, 100);
+let mew = new pokemon("Mew", 55, 44, 50, 100);
 let salameche = new pokemon("Salameche", 52, 43, 50, 60);
 
 
 while (mew.hp > 0 && salameche.hp > 0) {
-  if (mew.isLucky) {
-    mew.attackPokemon(salameche);
+    if (mew.isLucky()) {
+    let degats = mew.attackPokemon(salameche);
     console.log(
-      `Il reste ${salameche.hp} et ${pokemon.degats} de dégats ont été infligé`
+      `Il reste ${salameche.hp} vies et ${degats} de dégats ont été infligé`
     );
   }
         if (mew.hp <= 0) {
@@ -43,9 +43,9 @@ while (mew.hp > 0 && salameche.hp > 0) {
             }
     
     if (salameche.isLucky) {
-    salameche.attackPokemon(salameche);
+    let degats = salameche.attackPokemon(mew);
     console.log(
-    `Il reste ${mew.hp} et ${pokemon.degats} de dégats ont été infligé`
+    `Il reste ${mew.hp} vies et ${degats} de dégats ont été infligé`
     );
     }
         if (salameche.hp <= 0) {
