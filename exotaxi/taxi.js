@@ -17,8 +17,8 @@ const taxi = [
 ]
 
 function JouerPlaylist(){
-    const indexmusic = Math.floor(Math.random() * playlist.length);
-    const play = playlist[indexmusic];
+    const indexmusic = Math.floor(Math.random() * taxi.radio.length);
+    const play = taxi.radio [indexmusic];
     console.log(
       `La musique en cours est ${play}, Il reste ${taxi.feuxRouges} de feux rouges`
     );
@@ -26,7 +26,7 @@ function JouerPlaylist(){
 }
 
 for (let i = 0; i < taxi.feuxRouges; i++) { 
-    const MusiqueJouee = JouerPlaylist;
+    const MusiqueJouee = JouerPlaylist();
     if (MusiqueJouee === "Anissa - Wejdene") {
       personnage.santeMent -= 1;
       taxi.changeTaxi += 1;
@@ -34,7 +34,7 @@ for (let i = 0; i < taxi.feuxRouges; i++) {
         `Changement de taxi ! Santé mentale de ${personnage.prenom} : ${personnage.santeMent}`
       );
     }
-    if (personnage.santeMent === 0) {
+    if (personnage.santeMent <= 0) {
     console.log(`${personnage.prenom} est devenu fou ! EXPLOSION !!`);
     break;
     }
