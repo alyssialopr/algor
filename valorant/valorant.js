@@ -1,4 +1,4 @@
-let partie = 24;
+// let partie = 24;
 
 let attaquants = [
   "Omen_Att",
@@ -67,24 +67,28 @@ function simulationManche() {
   }
 }
 
-// simulationManche();
-
-// console.log(`Résultat: Défense=${mancheGagnantesD++} Attaque = ${mancheGagnantesA++}`);
-
-for (let i = 0; i <= partie; i++) {
+for (let i = 0; i <= 40; i++) {
   console.log(i);
-simulationManche();
+  simulationManche();
+  console.log(
+    `Résultat: Défense=${mancheGagnantesD} Attaque = ${mancheGagnantesA}`
+  );
 }
 
-console.log(
-  `Résultat: Défense=${mancheGagnantesD++} Attaque = ${mancheGagnantesA++}`
-);
-
-
-if (mancheGagnantesA > mancheGagnantesD) {
-    console.log('Les gagnants sont les attaquants')
-} else {
-    console.log('Les gagnants sont les défenseurs')
+if (mancheGagnantesA >= 13) {
+    if (mancheGagnantesA > mancheGagnantesD) {
+    console.log("Les gagnants sont les attaquants");
+  } else if (mancheGagnantesD >= 13) {
+    console.log("Les gagnants sont les défenseurs");
+    } else {
+        console.log("Match Nul");
+  }
+} else if (mancheGagnantesD >= 13) {
+    if (mancheGagnantesA > mancheGagnantesD) {
+      console.log("Les gagnants sont les attaquants");
+    } else if (mancheGagnantesD >= 13) {
+      console.log("Les gagnants sont les défenseurs");
+    } else {
+      console.log("Match Nul");
+    }
 }
-
-// let kill = [randomAttaquant, randomDefenseur][Math.floor(Math.random() * 2)];
